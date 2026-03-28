@@ -1,10 +1,10 @@
 import React from 'react';
 import Post from './post';
 
-function PostList({ post }) {
+function PostList({ posts = [] }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-      {post.map((post) => (
+      {posts.map((post) => (
         <Post key={post.id} post={post} />
       ))}
     </div>

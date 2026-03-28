@@ -1,8 +1,8 @@
 import React from 'react';
 
-function MainContent() {
+function LeftCommunityList() {
   return (
-    <section
+    <aside
       style={{
         backgroundColor: '#fff',
         border: '1px solid #ddd',
@@ -10,9 +10,9 @@ function MainContent() {
         padding: '16px',
       }}
     >
-      Main feed
-    </section>
+      Left communities
+    </aside>
   );
 }
 
-export default MainContent;
+export default LeftCommunityList;
