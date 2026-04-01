@@ -11,26 +11,80 @@ function App() {
         display: 'flex',
         flexDirection: 'column',
         backgroundColor: '#f6f7f8',
+        color: '#1a1a1b',
+        fontFamily: 'Arial, sans-serif',
       }}
     >
       <header
         style={{
           display: 'grid',
-          gridTemplateColumns: '1fr auto 1fr',
+          gridTemplateColumns: '220px 1fr 220px',
           alignItems: 'center',
           padding: '16px 24px',
           borderBottom: '1px solid #ddd',
-          backgroundColor: '#fff',
+          backgroundColor: '#ffffff',
+          position: 'sticky',
+          top: 0,
+          zIndex: 20,
+          boxShadow: '0 1px 6px rgba(0, 0, 0, 0.06)',
         }}
       >
         <div style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>
           Sub-Creddit
         </div>
 
-        <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
-          <button>Newest</button>
-          <button>Best</button>
-          <button>Controversial</button>
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            gap: '10px',
+            flexWrap: 'wrap',
+          }}
+        >
+          <button
+            style={{
+              padding: '10px 16px',
+              borderRadius: '999px',
+              border: '1px solid #d7d7d7',
+              backgroundColor: '#ffffff',
+              color: '#1a1a1b',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            Newest
+          </button>
+
+          <button
+            style={{
+              padding: '10px 16px',
+              borderRadius: '999px',
+              border: '1px solid #d7d7d7',
+              backgroundColor: '#ff4500',
+              color: '#ffffff',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            Best
+          </button>
+
+          <button
+            style={{
+              padding: '10px 16px',
+              borderRadius: '999px',
+              border: '1px solid #d7d7d7',
+              backgroundColor: '#ffffff',
+              color: '#1a1a1b',
+              fontWeight: '600',
+              cursor: 'pointer',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            Controversial
+          </button>
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -40,8 +94,11 @@ function App() {
             style={{
               width: '260px',
               padding: '10px 12px',
-              borderRadius: '20px',
-              border: '1px solid #ccc',
+              borderRadius: '999px',
+              border: '1px solid #d6d6d6',
+              outline: 'none',
+              backgroundColor: '#f8f9fa',
+              fontSize: '0.95rem',
             }}
           />
         </div>
@@ -51,7 +108,7 @@ function App() {
         style={{
           display: 'grid',
           gridTemplateColumns: '250px minmax(0, 1fr) 320px',
-          gap: '16px',
+          gap: '20px',
           padding: '16px 24px',
           flex: 1,
         }}
