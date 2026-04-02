@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+# Sub-Creddit r/teeksone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A lightweight Reddit aggregator built on top of a Codecademy project, designed to surface interesting, diverse, and global content in one place.
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+Sub-Creddit pulls together content from across Reddit into a simple three-column layout:
 
-### `npm start`
+## Main Feed
+### Browse Reddit’s homepage with filters for:
+Newest
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Best
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Controversial
 
-### `npm test`
+## Curated Feed
+### A focused selection of posts from:
+r/news
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+r/science
 
-### `npm run build`
+r/fitness
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+r/finance
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+r/memes
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Community Sidebar
+### Quick access to “Ask” communities:
+r/AskAnAmerican
 
-### `npm run eject`
+r/AskAnAustralian
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+r/AskEurope
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+r/AskAChinese
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+r/AskSouthAfrica
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### sneaky link
+couple funny clicks in there somewhere. just jokes.
 
-## Learn More
+### Purpose
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+We live in a world that is more globally connected than ever, yet people often remain isolated from perspectives outside their immediate environment.
+We rely heavily on news media for our opinions however this frequently shapes a particular narrative, but it’s becoming increasingly clear that it isn’t always the best lens for forming opinions or understanding the world.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Sub-Creddit would first step to a platform of diverse opinions.
+Aim to include;
+real-time discussions, access to diverse global communities and a curated topic feed.
 
-### Code Splitting
+This app aims to make it easier to explore other viewpoints, cultures, and ideas beyond your own experience.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Tech Stack
+React
+JavaScript (ES6+)
+Reddit JSON API
+Create React App (CRA)
 
-### Analyzing the Bundle Size
+### Features
+Dynamic Reddit homepage feed
+Filter switching (new, best, controversial)
+Curated multi-subreddit aggregation
+Responsive three-column layout
+Image-rich post rendering
+Direct links to Reddit posts and communities
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+#### Future Improvements
+Global filter syncing across feeds
+Search functionality
+Improved post interactions (votes, comments preview)
+Mobile responsiveness
+User personalization
 
-### Making a Progressive Web App
+#### Installation 
+git clone https://github.com/teeksONE/sub-creddit-app.git
+cd sub-creddit
+npm install
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Note
+This project uses a proxy to access Reddit’s public JSON endpoints.
+Ensure your package.json includes:  "proxy": "https://www.reddit.com"
