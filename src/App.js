@@ -18,9 +18,10 @@ function App() {
       <header
         style={{
           display: 'grid',
-          gridTemplateColumns: '220px 1fr 220px',
+          gridTemplateColumns: '220px 1fr 280px',
           alignItems: 'center',
-          padding: '16px 24px',
+          gap: '16px',
+          padding: '14px 24px',
           borderBottom: '1px solid #ddd',
           backgroundColor: '#ffffff',
           position: 'sticky',
@@ -29,62 +30,51 @@ function App() {
           boxShadow: '0 1px 6px rgba(0, 0, 0, 0.06)',
         }}
       >
-        <div style={{ fontWeight: 'bold', fontSize: '1.5rem' }}>
-          Sub-Creddit
-        </div>
-
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '10px',
-            flexWrap: 'wrap',
-          }}
-        >
-          <button
+        <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
+          <a
+            href="#"
             style={{
-              padding: '10px 16px',
+              textDecoration: 'none',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '10px 14px',
               borderRadius: '999px',
-              border: '1px solid #d7d7d7',
-              backgroundColor: '#ffffff',
-              color: '#1a1a1b',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
-            }}
-          >
-            Newest
-          </button>
-
-          <button
-            style={{
-              padding: '10px 16px',
-              borderRadius: '999px',
-              border: '1px solid #d7d7d7',
               backgroundColor: '#ff4500',
               color: '#ffffff',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
+              fontWeight: '700',
+              fontSize: '0.95rem',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)',
             }}
           >
-            Best
-          </button>
+            <span
+              style={{
+                width: '10px',
+                height: '10px',
+                borderRadius: '50%',
+                backgroundColor: '#ffffff',
+                display: 'inline-block',
+              }}
+            />
+            r/teeksone
+          </a>
+        </div>
 
-          <button
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <a
+            href="https://www.reddit.com/r/videos/comments/9ts43q/what_is_the_charge_eating_a_meal_a_succulent/"
+            target="_blank"
+            rel="noopener noreferrer"
             style={{
-              padding: '10px 16px',
-              borderRadius: '999px',
-              border: '1px solid #d7d7d7',
-              backgroundColor: '#ffffff',
+              textDecoration: 'none',
               color: '#1a1a1b',
-              fontWeight: '600',
-              cursor: 'pointer',
-              transition: 'all 0.2s ease',
+              fontWeight: '700',
+              fontSize: '1.5rem',
+              letterSpacing: '0.3px',
             }}
           >
-            Controversial
-          </button>
+            Succulent-reddit
+          </a>
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
@@ -92,8 +82,9 @@ function App() {
             type="text"
             placeholder="Search Reddit"
             style={{
-              width: '260px',
-              padding: '10px 12px',
+              width: '100%',
+              maxWidth: '260px',
+              padding: '10px 14px',
               borderRadius: '999px',
               border: '1px solid #d6d6d6',
               outline: 'none',
@@ -107,9 +98,9 @@ function App() {
       <main
         style={{
           display: 'grid',
-          gridTemplateColumns: '250px minmax(0, 1fr) 320px',
+          gridTemplateColumns: '260px minmax(0, 1fr) 320px',
           gap: '20px',
-          padding: '16px 24px',
+          padding: '20px 24px',
           flex: 1,
         }}
       >

@@ -38,6 +38,17 @@ function MainContent() {
     fetchHomeFeed();
   }, [feedType]);
 
+  const buttonStyle = (active) => ({
+    padding: '10px 16px',
+    borderRadius: '999px',
+    border: '1px solid #d7d7d7',
+    backgroundColor: active ? '#ff4500' : '#ffffff',
+    color: active ? '#ffffff' : '#1a1a1b',
+    fontWeight: '600',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+  });
+
   return (
     <section
       style={{
@@ -52,12 +63,11 @@ function MainContent() {
           backgroundColor: '#fff',
           border: '1px solid #ddd',
           borderRadius: '12px',
-          padding: '16px',
+          padding: '20px 16px',
           display: 'flex',
-          justifyContent: 'space-between',
+          flexDirection: 'column',
           alignItems: 'center',
-          gap: '12px',
-          flexWrap: 'wrap',
+          gap: '14px',
         }}
       >
         <h2
@@ -65,15 +75,38 @@ function MainContent() {
             margin: 0,
             fontSize: '1.2rem',
             color: '#1a1a1b',
+            textAlign: 'center',
           }}
         >
           Home Feed
         </h2>
 
-        <div style={{ display: 'flex', gap: '8px' }}>
-          <button onClick={() => setFeedType('new')}>Newest</button>
-          <button onClick={() => setFeedType('best')}>Best</button>
-          <button onClick={() => setFeedType('controversial')}>
+        <div
+          style={{
+            display: 'flex',
+            gap: '10px',
+            justifyContent: 'center',
+            flexWrap: 'wrap',
+          }}
+        >
+          <button
+            onClick={() => setFeedType('new')}
+            style={buttonStyle(feedType === 'new')}
+          >
+            Newest
+          </button>
+
+          <button
+            onClick={() => setFeedType('best')}
+            style={buttonStyle(feedType === 'best')}
+          >
+            Best
+          </button>
+
+          <button
+            onClick={() => setFeedType('controversial')}
+            style={buttonStyle(feedType === 'controversial')}
+          >
             Controversial
           </button>
         </div>
