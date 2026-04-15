@@ -73,7 +73,7 @@ function App() {
               letterSpacing: '0.3px',
             }}
           >
-            Succulent-reddit
+            Don't argue just read-it.
           </a>
         </div>
 
