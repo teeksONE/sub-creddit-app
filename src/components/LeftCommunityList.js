@@ -29,71 +29,26 @@ function LeftCommunityList() {
     {
       name: 'AskMiddleEast',
       description: 'Place to ask any question you might have about the Middle East and North Africa',
-    }
+    },
   ];
 
   return (
-    <aside
-      style={{
-        backgroundColor: '#fff',
-        border: '1px solid #ddd',
-        borderRadius: '12px',
-        padding: '16px',
-        height: 'fit-content',
-      }}
-    >
-      <h2
-        style={{
-          marginTop: 0,
-          marginBottom: '16px',
-          fontSize: '1.1rem',
-          color: '#1a1a1b',
-        }}
-      >
+    <aside className="mg-card mg-card-tight">
+      <h2 className="mg-section-title" style={{ marginBottom: 14 }}>
         Communities
       </h2>
 
-      <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '12px',
-        }}
-      >
+      <div className="mg-community-list">
         {communities.map((community) => (
           <a
             key={community.name}
             href={`https://www.reddit.com/r/${community.name}/`}
             target="_blank"
             rel="noopener noreferrer"
-            style={{
-              display: 'block',
-              textDecoration: 'none',
-              color: '#1a1a1b',
-              border: '1px solid #eee',
-              borderRadius: '10px',
-              padding: '12px',
-              backgroundColor: '#fafafa',
-            }}
+            className="mg-community"
           >
-            <div
-              style={{
-                fontWeight: '600',
-                marginBottom: '4px',
-              }}
-            >
-              r/{community.name}
-            </div>
-
-            <div
-              style={{
-                fontSize: '0.9rem',
-                color: '#555',
-                lineHeight: 1.4,
-              }}
-            >
-              {community.description}
-            </div>
+            <div className="mg-community-name">r/{community.name}</div>
+            <div className="mg-community-desc">{community.description}</div>
           </a>
         ))}
       </div>
