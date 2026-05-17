@@ -408,3 +408,142 @@ a { color: inherit; }
   .mg-post, .mg-curated-card, .mg-logo { animation: none; }
 }
 
+/* ---------- welcome modal ---------- */
+
+.mg-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(8, 5, 20, 0.72);
+  backdrop-filter: blur(8px) saturate(140%);
+  -webkit-backdrop-filter: blur(8px) saturate(140%);
+  animation: mg-fade-up 0.35s ease both;
+  transition: background 1s ease, backdrop-filter 1s ease;
+}
+
+.mg-modal-phase-video {
+  background: #000;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 0;
+}
+
+.mg-modal-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #000;
+  animation: mg-fade-in 0.6s ease both;
+}
+
+@keyframes mg-fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.mg-modal-card {
+  position: relative;
+  max-width: 620px;
+  width: 100%;
+  padding: 36px 32px 30px;
+  border-radius: var(--radius-card);
+  background: var(--card-bg-strong);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-soft), var(--shadow-glow-magenta);
+  color: var(--text-primary);
+  animation: mg-fade-up 0.5s ease both;
+}
+
+.mg-modal-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: var(--radius-card);
+  padding: 1px;
+  background: var(--accent-gradient);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0.55;
+}
+
+.mg-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-primary);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.mg-modal-close:hover {
+  background: rgba(255, 77, 203, 0.18);
+  border-color: var(--card-border-hover);
+  transform: rotate(90deg);
+}
+
+.mg-modal-title {
+  margin: 0 0 16px;
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mg-modal-body {
+  margin: 0 0 24px;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.mg-modal-cta {
+  display: inline-block;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+  color: #fff;
+  background: var(--accent-gradient);
+  background-size: 200% 200%;
+  box-shadow: var(--shadow-glow-magenta);
+  animation: mg-gradient-shift 8s ease infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.mg-modal-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-glow-magenta), var(--shadow-glow-teal);
+}
+.mg-modal-cta:focus-visible {
+  outline: 2px solid var(--accent-teal);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .mg-modal-card { padding: 30px 22px 24px; }
+  .mg-modal-title { font-size: 1.3rem; }
+  .mg-modal-body { font-size: 0.95rem; line-height: 1.6; }
+}
+

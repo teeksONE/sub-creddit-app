@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MainContent from './components/MainContent';
 import LeftCommunityList from './components/LeftCommunityList';
 import RightCuratedList from './components/RightCuratedList';
+import WelcomeModal from './components/WelcomeModal';
 
 const BG_IMAGES = Array.from(
   { length: 9 },
@@ -22,6 +23,7 @@ function shuffle(arr) {
 function App() {
   const [order] = useState(() => shuffle(BG_IMAGES));
   const [index, setIndex] = useState(0);
+  const [showWelcome, setShowWelcome] = useState(true);
 
   useEffect(() => {
     order.forEach((src) => {
@@ -39,6 +41,7 @@ function App() {
 
   return (
     <div className="mg-app">
+      {showWelcome && <WelcomeModal onClose={() => setShowWelcome(false)} />}
       <div className="mg-bg">
         {order.map((src, i) => (
           <div
@@ -50,7 +53,7 @@ function App() {
       </div>
       <header className="mg-header">
         <div className="mg-header-cell-left">
-          <a href="#" className="mg-logo">
+          <a href="/" className="mg-logo">
             <span className="mg-logo-dot" />
             r/teeksone
           </a>

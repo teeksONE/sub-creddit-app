@@ -1,0 +1,7 @@
+/.json              https://www.reddit.com/.json              200
+/best/.json         https://www.reddit.com/best/.json         200
+/new/.json          https://www.reddit.com/new/.json          200
+/controversial/.json https://www.reddit.com/controversial/.json 200
+/r/*                https://www.reddit.com/r/:splat           200
+
+/*                  /index.html                                200
