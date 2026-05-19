@@ -1,14 +1,15 @@
 import React from 'react';
+import { safeImageUrl } from '../../utils/safeImageUrl';
 
 function getPostImage(post) {
   const previewUrl = post?.preview?.images?.[0]?.source?.url;
 
   if (previewUrl) {
-    return previewUrl.replace(/&amp;/g, '&');
+    return safeImageUrl(previewUrl.replace(/&amp;/g, '&'));
   }
 
-  if (post?.thumbnail && post.thumbnail.startsWith('https')) {
-    return post.thumbnail;
+  if (post?.thumbnail) {
+    return safeImageUrl(post.thumbnail);
   }
 
   return null;

@@ -1,0 +1,28 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[build.environment]
+  NODE_VERSION = "20"
+  INLINE_RUNTIME_CHUNK = "false"
+  GENERATE_SOURCEMAP = "false"
+
+[[edge_functions]]
+  function = "rate-limit"
+  path = "/.json"
+
+[[edge_functions]]
+  function = "rate-limit"
+  path = "/best/.json"
+
+[[edge_functions]]
+  function = "rate-limit"
+  path = "/new/.json"
+
+[[edge_functions]]
+  function = "rate-limit"
+  path = "/controversial/.json"
+
+[[edge_functions]]
+  function = "rate-limit"
+  path = "/r/*"

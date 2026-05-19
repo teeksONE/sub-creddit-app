@@ -1,7 +1,8 @@
-/.json              https://www.reddit.com/.json              200
-/best/.json         https://www.reddit.com/best/.json         200
-/new/.json          https://www.reddit.com/new/.json          200
-/controversial/.json https://www.reddit.com/controversial/.json 200
-/r/*                https://www.reddit.com/r/:splat           200
+/.json                https://www.reddit.com/.json                  200
+/best/.json           https://www.reddit.com/best/.json             200
+/new/.json            https://www.reddit.com/new/.json              200
+/controversial/.json  https://www.reddit.com/controversial/.json    200
+/r/:sub/.json         https://www.reddit.com/r/:sub/.json           200
+/r/:sub/:filter.json  https://www.reddit.com/r/:sub/:filter.json    200
 
-/*                  /index.html                                200
+/*                    /index.html                                    200

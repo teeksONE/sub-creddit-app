@@ -1,27 +1,28 @@
+import { safeFetchJson } from '../../utils/safeFetch';
+
+const SUBREDDIT_RE = /^[A-Za-z0-9_]{2,21}$/;
+const FILTER_RE = /^[a-z]{1,20}$/;
+
 export const curatedSubreddits = [
   'news', 'science', 'fitness', 'finance', 'memes'
 ];
 
 export async function fetchCuratedPosts(filter = 'best') {
+  const safeFilter = FILTER_RE.test(filter) ? filter : 'best';
   const results = [];
 
   for (let subreddit of curatedSubreddits) {
+    if (!SUBREDDIT_RE.test(subreddit)) {
+      results.push(null);
+      continue;
+    }
+
     try {
-      let path = '';
+      const path = safeFilter === 'best'
+        ? `/r/${subreddit}/.json?limit=1`
+        : `/r/${subreddit}/${safeFilter}.json?limit=1`;
 
-      if (filter === 'best') {
-        path = `/r/${subreddit}/.json?limit=1`;
-      } else {
-        path = `/r/${subreddit}/${filter}.json?limit=1`;
-      }
-
-      const response = await fetch(path);
-
-      if (!response.ok) {
-        throw new Error(`HTTP error ${response.status}`);
-      }
-
-      const data = await response.json(); // ✅ defines "data"
+      const data = await safeFetchJson(path);
       const children = data?.data?.children || [];
 
       if (children.length > 0) {

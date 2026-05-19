@@ -1,6 +1,7 @@
-export function getPostImage(post) {
+import { safeImageUrl } from './safeImageUrl';
 
-    const url = post?.preview?.images?.[0]?.source?.url;
-    return url ? url.replace(/&amp;/g, '&') : null;
-  }
-  
+export function getPostImage(post) {
+  const url = post?.preview?.images?.[0]?.source?.url;
+  if (!url) return null;
+  return safeImageUrl(url.replace(/&amp;/g, '&'));
+}
