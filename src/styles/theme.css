@@ -515,6 +515,32 @@ a { color: inherit; }
   color: var(--text-muted);
 }
 
+.mg-modal-body p {
+  margin: 0 0 14px;
+}
+.mg-modal-body p:last-child {
+  margin-bottom: 0;
+}
+
+.mg-modal-credit {
+  margin-top: 18px !important;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  text-align: center;
+  letter-spacing: 0.2px;
+}
+
+.mg-modal-credit-link {
+  color: var(--accent-teal);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(61, 218, 215, 0.35);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.mg-modal-credit-link:hover {
+  color: var(--accent-magenta);
+  border-bottom-color: var(--accent-magenta);
+}
+
 .mg-modal-cta {
   display: inline-block;
   padding: 11px 22px;

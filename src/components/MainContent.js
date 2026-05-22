@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PostList from '../features/Post/PostList';
+import { safeFetchJson } from '../utils/safeFetch';
 
 function MainContent() {
   const [posts, setPosts] = useState([]);
@@ -15,13 +16,7 @@ function MainContent() {
       try {
         const path = feedType === 'best' ? '/.json' : `/${feedType}/.json`;
 
-        const response = await fetch(path);
-
-        if (!response.ok) {
-          throw new Error(`HTTP error ${response.status}`);
-        }
-
-        const data = await response.json();
+        const data = await safeFetchJson(path);
         const children = data?.data?.children || [];
         const formattedPosts = children.map((child) => child.data);
 
